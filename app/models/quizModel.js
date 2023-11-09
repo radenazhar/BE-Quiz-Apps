@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const questionArray = new mongoose.Schema({
     title : { type:String },
-    questions : {type : String},
-    options : [{ option : String, isCorrect : Boolean, id: Number}],
+    answer : {type : String},
+    options : [{ option : String, isCorrect : Boolean, id: String}],
     correctAnswer : {type : String},
 })
 

@@ -5,7 +5,14 @@ const router = express.Router();
 
 router
     .route("/")
-    .post(quizController.createQuestion);
+    .post(quizController.createQuestion)
+    .get(quizController.getAllQuestion)
+    
+router
+    .route("/:id")
+    .get(quizController.getQuestionById)
+    .delete(quizController.deleteQuestion);
+    
 
 
 module.exports = router;
