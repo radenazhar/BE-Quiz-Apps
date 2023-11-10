@@ -11,7 +11,8 @@ router
 router
     .route("/:id")
     .get(quizController.getQuestionById)
-    .delete(quizController.deleteQuestion);
+    .delete(quizController.deleteQuestion)
+    .put(quizController.updateQuestion);
     
 
 

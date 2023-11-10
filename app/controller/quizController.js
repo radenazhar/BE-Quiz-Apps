@@ -40,7 +40,25 @@ exports.getQuestionById = async(req, res) => {
 exports.deleteQuestion = async(req, res) => {
     try {
         const deletedQuestion = await quizServices.deleteQuestion(req.params.id)
+        res.status(200).json({
+            status : 200,
+            message : "success",
+            data : deletedQuestion
+        })
         res.status(200).json({message : "Success"})
+    } catch (error) {
+        res.status(400).json({error : "Bad Requiest"});
+    }
+}
+
+exports.updateQuestion = async(req,res) => {
+    try {
+        const newQuestion = await quizServices.updateQuestion(req.params.id, req.body)
+        res.status(200).json({
+            status : 200,
+            message : "success",
+            data : newQuestion
+        })
     } catch (error) {
         res.status(400).json({error : "Bad Requiest"});
     }
